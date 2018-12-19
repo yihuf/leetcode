@@ -70,7 +70,7 @@ private:
 
 void printListNode(ListNode* l1)
 {
-    if (l1 != NUll)
+    if (l1 != NULL)
     {
         if (l1->next != NULL)
         {
