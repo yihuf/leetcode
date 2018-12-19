@@ -19,6 +19,8 @@ class Solution(object):
         """
         val1 = 0
         val2 = 0
+        next1 = None
+        next2 = None
 
         if l1 == None and l2 == None:
             if incr != 0:
@@ -28,8 +30,10 @@ class Solution(object):
 
         if l1 != None:
             val1 = l1.val
+            next1 = l1.next
         if l2 != None:
             val2 = l2.val
+            next2 = l2.next
 
         l3 = ListNode(0)
         result = val1 + val2 + incr
@@ -40,7 +44,7 @@ class Solution(object):
             l3.val = result
             incr = 0
 
-        l3.next = self.__addVal__(l1.next, l2.next, incr)
+        l3.next = self.__addVal__(next1, next2, incr)
         return l3        
 
 
