@@ -32,7 +32,6 @@ class Solution(object):
             val2 = l2.val
 
         l3 = ListNode(0)
-        incr = 0
         result = val1 + val2 + incr
         if(result >= 10):
             l3.val = result - 10
