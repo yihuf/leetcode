@@ -98,7 +98,7 @@ int main()
     ListNode* l2_3 = new ListNode(4);
     l2->next = l2_2;
     l2_2->next = l2_3;
-    print(l2);
+    printListNode(l2);
     ListNode* l3 = Solution().addTwoNumbers(l1, l2);
-    print(l3);
+    printListNode(l3);
 }
