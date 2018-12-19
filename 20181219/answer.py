@@ -10,12 +10,48 @@ class ListNode(object):
         self.next = None
 
 class Solution(object):
+    def __addVal__(self, l1, l2, incr):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :type incr: int
+        :rtype: ListNode
+        """
+        val1 = 0
+        val2 = 0
+
+        if l1 == None and l2 == None:
+            if incr != 0:
+                return ListNode(incr)
+            else:
+                return None
+
+        if l1 != None:
+            val1 = l1.val
+        if l2 != None:
+            val2 = l2.val
+
+        l3 = ListNode(0)
+        incr = 0
+        result = val1 + val2 + incr
+        if(result >= 10):
+            l3.val = result - 10
+            incr = 1
+        else:
+            l3.val = result
+
+        l3.next = self.__addVal__(l1.next, l2.next, incr)
+        return l3        
+
+
     def addTwoNumbers(self, l1, l2):
         """
         :type l1: ListNode
         :type l2: ListNode
         :rtype: ListNode
         """
+
+        return self.__addVal__(l1, l2, 0)
 
 def printListNode(l1):
     if l1.next != None:
@@ -37,3 +73,6 @@ L2_3 = ListNode(4)
 l2.next = L2_2
 L2_2.next = L2_3
 printListNode(l2)
+
+l3 = Solution().addTwoNumbers(l1, l2)
+printListNode(l3)
