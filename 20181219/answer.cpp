@@ -74,15 +74,14 @@ void printListNode(ListNode* l1)
     {
         if (l1->next != NULL)
         {
-            cout<<l1->val<<"->";
+            cout<<l1->val<<"->";          
+            printListNode(l1->next);
         }
         else
         {
             cout<<l1->val<<endl;
         }
     }
-
-
 }
 
 int main()
