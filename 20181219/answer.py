@@ -38,6 +38,7 @@ class Solution(object):
             incr = 1
         else:
             l3.val = result
+            incr = 0
 
         l3.next = self.__addVal__(l1.next, l2.next, incr)
         return l3        
